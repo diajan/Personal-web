@@ -2,7 +2,7 @@ import React from 'react'
 
 const BurgerMenu: React.FC<{}> = () => {
   return (
-    <div className='flex cursor-pointer items-center bg-blue-600 fixed m-7 p-2 rounded-md'>
+    <div className='lg:hidden flex cursor-pointer items-center bg-blue-600 fixed m-7 p-2 rounded-md'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         className='h-5 w-5 text-white'

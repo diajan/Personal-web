@@ -8,8 +8,8 @@ const Switch = () => {
         id={`switch`}
         type='checkbox'
       />
-      <label className='label flex items-center justify-between transition-all duration-1000 cursor-pointer relative w-16 h-9 rounded-full bg-gray-400' htmlFor={`switch`}>
-        <span className='button absolute top-1 left-1 w-7 h-7 transition-all duration-200 rounded-full shadow-xl bg-gray-800' />
+      <label className='label flex items-center justify-between transition-all duration-1000 cursor-pointer relative w-12 h-6 rounded-full bg-gray-400' htmlFor={`switch`}>
+        <span className='button absolute top-1 left-1 w-4 h-4 transition-all duration-200 rounded-full shadow-xl bg-gray-800' />
       </label>
       <style jsx>{`
         #switch:checked + .label .button {
