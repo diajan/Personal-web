@@ -10,7 +10,7 @@ interface Props {
 const Button: React.FC<Props> = ({ title, className }) => {
   return (
     <div
-      className={`grid cursor-pointer place-items-center bg-blue-600 p-2  rounded-md ${className}`}>
+      className={`grid cursor-pointer place-items-center transition-colors bg-blue-600 p-2  rounded-md ${className}`}>
       {title}
 
       <style jsx>{`
