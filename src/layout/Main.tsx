@@ -1,17 +1,16 @@
-import React, { ReactChildren, ReactChild } from 'react'
+import React from 'react'
 import Head from 'next/head'
-import BurgerMenu from '../components/BurgerMenu'
-import Menu from '../components/Menu'
+import Menu from '../components/generic/Menu'
 import DarkMode from '../components/DarkMode'
 import Chevrons from '../components/Chevrons'
 
 interface Props {
-  children: unknown
+  children: React.HTMLAttributes<HTMLElement>
 }
 
 const Main: React.FC<Props> = ({ children }) => {
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
       <Head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
@@ -32,10 +31,13 @@ const Main: React.FC<Props> = ({ children }) => {
       </Head>
 
       <DarkMode />
-      <BurgerMenu />
-      <Menu />
+      <div className='flex'>
+        <Menu />
+        <div className='flex-grow'>
+          <div className='w-11/12 mx-auto'>{children}</div>
+        </div>
+      </div>
       <Chevrons />
-      {children}
     </div>
   )
 }
