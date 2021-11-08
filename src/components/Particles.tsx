@@ -48,28 +48,20 @@ const Particles: React.FC<{}> = () => {
             enable: true,
             outMode: 'bounce',
             random: false,
-            speed: 4,
+            speed: 3,
             straight: false,
+            
           },
-          number: {
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-            value: 80,
-          },
+          
           opacity: {
             value: 0.2,
           },
           shape: {
             type: 'circle',
           },
-          size: {
-            random: true,
-            value: 5,
-          },
+          
         },
-        detectRetina: true,
+        detectRetina: false,
       }}
     />
   )
