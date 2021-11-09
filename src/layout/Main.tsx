@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Menu from '../components/generic/Menu'
 import DarkMode from '../components/Switch'
 import Chevrons from '../components/Chevrons'
+import BurgerMenu from '../components/generic/BurgerMenu'
 
 interface Props {
   children: React.HTMLAttributes<HTMLElement>
@@ -32,7 +33,10 @@ const Main: React.FC<Props> = ({ children }) => {
 
       <DarkMode />
       <div className='flex'>
-        <Menu />
+        <BurgerMenu />
+        <div className='hidden lg:block'>
+          <Menu />
+        </div>
         <div className='flex-grow'>
           <div className='w-11/12 mx-auto'>{children}</div>
         </div>

@@ -1,18 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../utils/Button'
+import Menu from './Menu'
 
-interface Props {
-  onClick: () => void
-}
-
-const BurgerMenu: React.FC<Props> = ({ onClick }) => {
+const BurgerMenu: React.FC = () => {
+  const [show, setShow] = useState(true)
+  const handleShow = () => setShow(s => !s)
   return (
-    <div onClick={onClick}>
-      <Button
-        title={<i className='fas fa-bars'></i>}
-        className='lg:hidden flex cursor-pointer items-center bg-blue-600 fixed m-7 p-2 rounded-md text-white z-20'
-      />
-    </div>
+    <>
+      {show ? (
+        <div onClick={handleShow}>
+          <Button
+            title={<i className='fas fa-bars'></i>}
+            className='lg:hidden flex cursor-pointer items-center bg-blue-600 fixed m-7 p-2 rounded-md text-white z-20'
+          />
+        </div>
+      ) : (
+        <>
+          <div className='z-50 bg-red-700'>
+            <Menu />
+          </div>
+          <div
+            onClick={handleShow}
+            className='z-10 fixed w-screen h-screen overflow-hidden'>
+          </div>
+        </>
+      )}
+    </>
   )
 }
 
