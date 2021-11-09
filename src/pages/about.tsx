@@ -9,7 +9,7 @@ import TextBox from '../components/utils/TextBox'
 const about: React.FC<{}> = () => {
   return (
     <Main>
-      <div className='sm:p-20'>
+      <div className='p-4 sm:p-20'>
         <header className='text-center font-muli pt-12'>
           <Title
             title='About'
@@ -57,11 +57,10 @@ const about: React.FC<{}> = () => {
               }
             />
           </div>
-          <div className='space-y-6'>
-              {DOING.map(({title,sub})=>
-                <TextBox icon={<i className="fas fa-paint-brush"></i>} key={title} title={title} sub={sub}/>
-              )}
-            
+          <div className='space-y-6 mb-10'>
+            {DOING.map(({ icon, title, sub }) => (
+              <TextBox icon={<i className={`fas ${icon}`}></i>} key={title} title={title} sub={sub} />
+            ))}
           </div>
         </section>
       </div>

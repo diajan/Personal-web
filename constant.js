@@ -13,35 +13,40 @@ const PERSON = [
 const DOING = [
   {
     title: 'SPA Development',
+    icon: 'fa-check-circle',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
   {
     title: 'Responsive Design',
+    icon: 'fa-mobile-alt',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
   {
     title: 'UI-Kt to app',
+    icon: 'fa-paint-brush',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
   {
     title: 'Continuous learning',
+    icon: 'fa-graduation-cap',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
   {
     title: 'working with css frameworks',
+    icon: 'fa-cube',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
   {
     title: 'support',
+    icon: 'fa-users',
     sub: `In a professional context it often happens that private clients corder
   a publication to be made`,
   },
-  
 ]
 
 module.exports = {

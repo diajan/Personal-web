@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Title from './Title'
 
 interface Props {
-  icon: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+  icon: React.ReactNode
   title: string
   sub: string
 }
