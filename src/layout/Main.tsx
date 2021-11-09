@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Menu from '../components/generic/Menu'
-import DarkMode from '../components/DarkMode'
+import DarkMode from '../components/Switch'
 import Chevrons from '../components/Chevrons'
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const Main: React.FC<Props> = ({ children }) => {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden bg-gray-50 font-muli'>
       <Head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />

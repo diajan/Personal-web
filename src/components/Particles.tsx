@@ -11,25 +11,28 @@ const Particles: React.FC<{}> = () => {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fpsLimit: 60,
+        fpsLimit: 100,
         interactivity: {
           modes: {
             bubble: {
-              distance: 400,
+              distance: 10,
               duration: 2,
               opacity: 0.8,
-              size: 40,
+              size: 20,
             },
             push: {
-              quantity: 4,
+              quantity: 0,
             },
             repulse: {
-              distance: 200,
-              duration: 0.4,
+              distance: 2,
+              duration: 0.9,
             },
           },
         },
         particles: {
+          number: {
+            value: 30,
+          },
           color: {
             value: '#ffffff',
           },
@@ -48,18 +51,15 @@ const Particles: React.FC<{}> = () => {
             enable: true,
             outMode: 'bounce',
             random: false,
-            speed: 3,
-            straight: false,
-            
+            speed: 2,
+            straight: true,
           },
-          
           opacity: {
             value: 0.2,
           },
           shape: {
             type: 'circle',
           },
-          
         },
         detectRetina: false,
       }}

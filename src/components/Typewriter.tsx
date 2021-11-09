@@ -10,13 +10,13 @@ export const Typewriter: React.FC<{}> = () => {
       }}
       onInit={typewriter => {
         typewriter
-          .typeString('<span style="color:cyan">A</span> Front-End Developer')
+          .typeString('<span style="color:#38BDF8">A</span> Front-End Developer')
           .pauseFor(3000)
           .deleteChars(19)
           .typeString('Web Designer')
           .pauseFor(3000)
           .deleteAll()
-          .typeString('<span style="color:cyan">I love</span> Technologies')
+          .typeString('<span style="color:#38BDF8">I love</span> Technologies')
           .pauseFor(3000)
           .deleteChars(12)
           .typeString('Open Source')
