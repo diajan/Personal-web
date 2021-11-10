@@ -1,19 +1,26 @@
 import { FC } from 'react'
-import Title from './Title'
 
 interface Props {
   icon: React.ReactNode
   title: string
   sub: string
+  text: string
 }
 
-const TextBox: FC<Props> = ({ icon, title, sub }) => {
+const TextBox: FC<Partial<Props>> = ({ icon, title, sub, text }) => {
   return (
-    <div className='flex rounded-2xl bg-white py-8 px-4'>
-      <div className='h-full text-blue-500 text-2xl'>{icon}</div>
+    <div className='flex rounded-2xl bg-white dark:bg-gray-800 py-8 px-4 m-0'>
+      <div className='h-full text-blue-500 text-xl'>{icon}</div>
       <div className='h-full ml-4 space-y-5'>
-        <h4 className='font-semibold text-xl text-gray-700 capitalize'>{title}</h4>
-        <p className='font-light text-gray-500'>{sub}</p>
+        {title && (
+          <h4 className='font-semibold text-xl text-gray-700 dark:text-gray-100  capitalize'>
+            {title}
+          </h4>
+        )}
+        <h4 className='leading-loose text-xl text-gray-600 dark:text-gray-300 capitalize '>
+          {text}
+        </h4>
+        <p className='font-light text-gray-500 dark:text-gray-400'>{sub}</p>
       </div>
     </div>
   )

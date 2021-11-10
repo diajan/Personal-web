@@ -1,5 +1,9 @@
 const NAME = 'Diajan'
-const BG_INDEX = 'https://retrina.com/demo/arshia/cv/assets/img/home-bg-3.jpg'
+const ABOUT = `Hi, I'm Mohamad Mahdi Aghajan and 18 years old. I am a Front-end developer\n.
+I started to learn 4 years ago, I worked on server-side programming languages such as python, ruby, PHP even I was a back-end developer for short time,\n but I now focused on web development, specially front-end.
+I'm working now with ReactJS and NextJS and develop single-page-applications.`
+const BG_INDEX =
+  'https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
 const PAGES = ['/', '/about', '/contact', '/portfolio', '/resume']
 const PERSON = [
@@ -56,4 +60,8 @@ module.exports = {
   PERSON,
   PAGES,
   DOING,
+  ABOUT,
 }
+
+// 'https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260'
+// 'https://image.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg'

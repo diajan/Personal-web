@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Menu: React.FC<{}> = () => {
   return (
     <>
-      <div className=' pop fixed shadow w-20 h-screen bg-blue-50 dark:bg-gray-800 z-10 rounded-r-3xl '>
+      <div className='shadow h-screen bg-blue-50 dark:bg-gray-800 rounded-r-3xl lg:p-3'>
         <ul className='flex flex-col h-full items-center justify-center space-y-12 xl:space-y-16 text-xl text-blue-500 dark:text-blue-50'>
           <Link href='/' passHref>
             <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
@@ -61,10 +61,6 @@ const Menu: React.FC<{}> = () => {
           .box:hover span {
             visibility: visible;
             opacity: 1;
-          }
-
-          .pop {
-            animation: ;
           }
         `}</style>
       </div>
