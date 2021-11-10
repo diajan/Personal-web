@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  onClick: (event: React.MouseEvent<HTMLLabelElement>) => void
+  onClick: (() => void | undefined) | undefined
 }
 
 const Switch: React.FC<Props> = ({ onClick }) => {

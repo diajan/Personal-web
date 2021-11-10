@@ -1,8 +1,13 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import NextNProgress from 'nextjs-progressbar'
+import ThemeContext, { mode } from '../context/ThemeContext'
+import { useState } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [theme, setTeme] = useState(mode.light)
+  const toggleTheme = () => setTeme(s => !s)
+
   return (
     <>
       <NextNProgress
@@ -12,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
-      <Component {...pageProps} />
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <Component {...pageProps} />
+      </ThemeContext.Provider>
     </>
   )
 }
