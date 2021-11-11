@@ -5,7 +5,7 @@ interface Props {
   title: string
   sub: string
   text: string
-  node: ReactNode | boolean
+  children: ReactNode | boolean
 }
 
 const TextBox: FC<Partial<Props>> = ({
@@ -13,16 +13,15 @@ const TextBox: FC<Partial<Props>> = ({
   title,
   sub,
   text,
-  node = false,
+  children = false,
 }) => {
   return (
     <div
       className={`rounded-2xl bg-white dark:bg-gray-800 py-8 px-4 m-0 ${
-        !node && 'flex'
-      }`}
-    >
-      {node ? (
-        node
+        !children && 'flex'
+      }`}>
+      {children ? (
+        children
       ) : (
         <>
           <div className='h-full text-blue-500 text-xl'>{icon}</div>

@@ -7,10 +7,10 @@ import Main from '../layout/Main'
 
 const Home: NextPage = () => {
   return (
-    <Main>
+    <Main noStyle>
       <div className='bg bg-cover bg-no-repeat bg-center h-screen flex items-center fixed w-full left-0 overflow-hidden'>
         <div className='w-full font-muli font-semibold text-white p-5 sm:p-7 md:p-10 lg:p-28'>
-          <Title title={`I'M ${NAME}`} className='text-5xl'/>
+          <Title title={`I'M ${NAME}`} className='text-5xl' />
           <h2 className='my-8 text-2xl'>
             <Typewriter />
           </h2>

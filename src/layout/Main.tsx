@@ -8,9 +8,10 @@ import ThemeContext from '../context/ThemeContext'
 
 interface Props {
   children: React.HTMLAttributes<HTMLElement>
+  noStyle?: boolean
 }
 
-const Main: React.FC<Props> = ({ children }) => {
+const Main: React.FC<Props> = ({ children, noStyle = false }) => {
   const { theme, toggleTheme } = useContext(ThemeContext)
 
   return (
@@ -34,7 +35,8 @@ const Main: React.FC<Props> = ({ children }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='overflow-hidde bg-gray-200 dark:bg-gray-900 font-muli'>
+      {/* sm:bg-red-700 md:bg-purple-800 lg:bg-pink-800 xl:bg-orange-700 */}
+      <div className='overflow-hidde bg-gray-200  dark:bg-gray-900 font-muli'>
         <DarkMode onClick={toggleTheme} />
 
         <main className='flex'>
@@ -45,7 +47,7 @@ const Main: React.FC<Props> = ({ children }) => {
             </div>
           </nav>
 
-          <section className='flex-grow p-4 sm:p-20'>
+          <section className={`flex-grow ${!noStyle && 'p-4 sm:p-10 lg:p-20'}`}>
             <div className='w-11/12 mx-auto'>{children}</div>
           </section>
         </main>

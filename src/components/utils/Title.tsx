@@ -23,7 +23,7 @@ const Title: React.FC<Partial<Props>> = ({
         node
       ) : (
         <div>
-          <h1 className={`${className} dark:text-gray-50`}>
+          <h1 className={`${className} dark:text-gray-100`}>
             {title} <span className='text-blue-500'>{specific}</span>
           </h1>
           <h5 className='text-gray-500 mt-5 font-light'>{sub}</h5>
