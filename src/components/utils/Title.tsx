@@ -6,6 +6,7 @@ interface Props {
   specific: string
   sub: string
   node: ReactNode
+  icon: React.ReactNode
 }
 
 const Title: React.FC<Partial<Props>> = ({
@@ -13,6 +14,7 @@ const Title: React.FC<Partial<Props>> = ({
   specific,
   sub,
   node,
+  icon,
   className,
 }) => {
   return (

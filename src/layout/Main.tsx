@@ -45,7 +45,7 @@ const Main: React.FC<Props> = ({ children }) => {
             </div>
           </nav>
 
-          <section className='flex-grow'>
+          <section className='flex-grow p-4 sm:p-20'>
             <div className='w-11/12 mx-auto'>{children}</div>
           </section>
         </main>

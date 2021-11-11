@@ -12,7 +12,7 @@ const Switch: React.FC<Props> = ({ onClick }) => {
         onClick={onClick}
         className='label flex items-center justify-between transition-all duration-1000 cursor-pointer relative w-12 h-6 rounded-full bg-gray-400 dark:bg-gray-50'
         htmlFor={`switch`}>
-        <span className='button absolute top-1 left-1 w-4 h-4 transition-all duration-200 rounded-full shadow-xl bg-gray-100' />
+        <span className='button absolute top-1 left-1 w-4 h-4 transition-all duration-200 rounded-full shadow-xl bg-gray-100 dark:bg-gray-400' />
       </label>
       <style jsx>{`
         #switch:checked + .label .button {

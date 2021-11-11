@@ -5,7 +5,7 @@ I'm working now with ReactJS and NextJS and develop single-page-applications.`
 const BG_INDEX =
   'https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
-const PAGES = ['/', '/about', '/contact', '/portfolio', '/resume']
+const PAGES = ['/', '/about', '/portfolio', '/resume', '/contact']
 const PERSON = [
   { title: 'Birthday', value: '3 December 2003' },
   { title: 'Age ', value: '18' },
