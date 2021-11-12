@@ -6,12 +6,12 @@ interface Props {
 }
 const Progress: React.FC<Props> = ({ skill, percent }) => {
   return (
-    <div className='relative pt-1 text-gray-800'>
+    <div className='relative pt-1 text-gray-700'>
       <div className='flex mb-2 items-center justify-between'>
         <div>
           <span
             className='
-          text-xs
+          text-sm
           font-bold
           inline-block
           py-1
@@ -24,7 +24,7 @@ const Progress: React.FC<Props> = ({ skill, percent }) => {
           </span>
         </div>
         <div className='text-right'>
-          <span className='text-xs font-semibold inline-block dark:text-gray-200'>
+          <span className='text-xs font-extrabold inline-block dark:text-gray-200'>
             {`${percent}%`}
           </span>
         </div>

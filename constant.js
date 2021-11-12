@@ -2,8 +2,7 @@ const NAME = 'Diajan'
 const ABOUT = `Hi, I'm Mohamad Mahdi Aghajan and 18 years old. I am a Front-end developer\n.
 I started to learn 4 years ago, I worked on server-side programming languages such as python, ruby, PHP even I was a back-end developer for short time,\n but I now focused on web development, specially front-end.
 I'm working now with ReactJS and NextJS and develop single-page-applications.`
-const BG_INDEX =
-  'https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+const BG_INDEX = 'img/bg.jpeg'
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
 const PAGES = ['/', '/about', '/portfolio', '/resume', '/contact']
 const PERSON = [
@@ -53,6 +52,63 @@ const DOING = [
   },
 ]
 
+const EDUCATION = [
+  {
+    title: 'Safi High school',
+    sub: '2019-2020',
+    desc: 'Diploma of Education (an year), Mathematics',
+  },
+  {
+    title: 'Nasime Danesh Conservatory',
+    sub: '2020-2022',
+    desc: 'Diploma of Education, Computer Graphics',
+  },
+]
+
+const EXPERIENCE = [
+  {
+    title: 'Web Developer',
+    sub: '2020-2021',
+    desc: 'Freelance, Esfahan/Iran',
+  },
+  {
+    title: 'Web Developer',
+    sub: '2020-2021',
+    desc: 'Freelance, Esfahan/Iran',
+  },
+  {
+    title: 'Web Developer',
+    sub: '2020-2021',
+    desc: 'Freelance, Esfahan/Iran',
+  },
+  {
+    title: 'Web Developer',
+    sub: '2020-2021',
+    desc: 'Freelance, Esfahan/Iran',
+  },
+  {
+    title: 'Web Developer',
+    sub: '2020-2021',
+    desc: 'Freelance, Esfahan/Iran',
+  },
+]
+
+const SKILLS = [
+  { skill: 'html', percent: '90' },
+  { skill: 'css', percent: '90' },
+  { skill: 'Javascript', percent: '80' },
+  { skill: 'Typescript', percent: '70' },
+  { skill: 'reactjs', percent: '85' },
+  { skill: 'redux', percent: '90' },
+  { skill: 'nextjs', percent: '80' },
+  { skill: 'css Frameworks', percent: '90' },
+  { skill: 'design systems', percent: '80' },
+  { skill: 'sass', percent: '90' },
+  { skill: 'webpack', percent: '70' },
+  { skill: 'git', percent: '70' },
+  { skill: 'php', percent: '70' },
+  { skill: 'mysql', percent: '50' },
+]
 module.exports = {
   BG_ME,
   BG_INDEX,
@@ -61,6 +117,9 @@ module.exports = {
   PAGES,
   DOING,
   ABOUT,
+  EDUCATION,
+  EXPERIENCE,
+  SKILLS
 }
 
 // 'https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260'

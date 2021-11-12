@@ -18,7 +18,7 @@ const TextBox: FC<Partial<Props>> = ({
   return (
     <div
       className={`rounded-2xl bg-white dark:bg-gray-800 py-8 px-4 m-0 ${
-        !children && 'flex'
+        !children && 'grid'
       }`}>
       {children ? (
         children

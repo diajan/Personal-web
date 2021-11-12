@@ -45,7 +45,7 @@ const Menu: React.FC<{}> = () => {
         <style jsx>{`
           .shadow {
             -webkit-box-shadow: 0px 0px 5px 0px #d8d8d8;
-            box-shadow: 0px 3px 5px rgb(203 203 203), -3px -3px 8px #a7a7a7;
+            box-shadow: 0px 1px 2px rgb(203 203 203), -3px -3px 8px #a7a7a7;
           }
 
           .box {
