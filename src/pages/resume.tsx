@@ -18,35 +18,42 @@ const resume: NextPage = () => {
         />
       </header>
 
-      <section className=''>
-        <div className=''>
-          <div className='flex place-self-start space-x-5'>
-            <i className='fas fa-hammer text-3xl text-blue-500'></i>
-            <Title title='Experience' className='text-4xl' />
-          </div>
-          <TextBox>
+      <section className='grid gap-12'>
+        <div>
+          {/*education*/}
+          <Title
+            title='Education'
+            className='text-4xl'
+            icon={
+              <i className='fas fa-graduation-cap text-3xl text-blue-500 mr-4'></i>
+            }
+          />
+          <TextBox className='lg:grid lg:grid-cols-2'>
             {EDUCATION.map(({ title, sub, desc }) => (
-              <Step title={title} sub={sub} desc={desc} />
+              <Step key={title} title={title} sub={sub} desc={desc} />
             ))}
           </TextBox>
         </div>
 
-        <div className=''>
-          <div className='flex place-self-start space-x-5'>
-            <i className='fas fa-graduation-cap text-3xl text-blue-500'></i>
-            <Title title='Education' className='text-4xl' />
-          </div>
-          <TextBox>
+        <div>
+          {/*experience*/}
+          <Title
+            title='Experience'
+            className='text-4xl'
+            icon={
+              <i className='fas fa-graduation-cap text-3xl text-blue-500 mr-4'></i>
+            }
+          />
+          <TextBox className='lg:grid lg:grid-cols-2'>
             {EXPERIENCE.map(({ title, sub, desc }) => (
-              <Step title={title} sub={sub} desc={desc} />
+              <Step key={title} title={title} sub={sub} desc={desc} />
             ))}
           </TextBox>
         </div>
 
-        <div className=''>
-          <div className='flex place-self-start space-y-5'>
-            <Title title='Language ' specific='Skills' className='text-3xl' />
-          </div>
+        <div>
+          {/*lang*/}
+          <Title title='Language ' specific='Skills' className='text-3xl' />
           <TextBox>
             <div className='flex justify-between'>
               <Title title='Persian' className='text-xl text-gray-700' />
@@ -60,17 +67,15 @@ const resume: NextPage = () => {
         </div>
       </section>
 
-      <section className=''>
-        <div>
-          <div className='flex place-self-start space-y-5'>
-            <Title title='Work' specific='Skills' className='text-3xl' />
-          </div>
-          <TextBox>
-            {SKILLS.map(({ skill, percent }) => (
-              <ProgressBar key={skill} skill={skill} percent={percent} />
-            ))}
-          </TextBox>
+      <section className='mt-12'>
+        <div className='flex place-self-start space-y-5'>
+          <Title title='Work' specific='Skills' className='text-3xl' />
         </div>
+        <TextBox className='lg:grid lg:grid-cols-2 lg:gap-x-8 '>
+          {SKILLS.map(({ skill, percent }) => (
+            <ProgressBar key={skill} skill={skill} percent={percent} />
+          ))}
+        </TextBox>
       </section>
     </Main>
   )

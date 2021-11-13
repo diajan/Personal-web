@@ -19,7 +19,8 @@ const Progress: React.FC<Props> = ({ skill, percent }) => {
           uppercase
           rounded-full
           dark:text-white
-        '>
+        '
+          >
             {skill}
           </span>
         </div>
@@ -29,7 +30,7 @@ const Progress: React.FC<Props> = ({ skill, percent }) => {
           </span>
         </div>
       </div>
-      <div className='overflow-hidden h-2 mb-4 text-xs flex rounded dark:bg-blue-200'>
+      <div className='shim overflow-hidden h-2 mb-4 text-xs flex rounded dark:bg-blue-200'>
         <div
           style={{ width: `${percent}%` }}
           className='
@@ -41,8 +42,38 @@ const Progress: React.FC<Props> = ({ skill, percent }) => {
         justify-center
         rounded-full
         bg-blue-500
-      '></div>
+      '
+        ></div>
       </div>
+      <style jsx>{`
+        .shim {
+          position: relative;
+          overflow: hidden;
+        }
+        .shim::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          transform: translateX(-100%);
+          background-image: linear-gradient(
+            90deg,
+            rgba(233, 233, 233, 1) 0,
+            rgba(233, 233, 233, 0.9) 50%,
+            rgba(233, 233, 233, 0.8) 100%
+          );
+          animation: shimmer 8s ease-out infinite;
+          content: '';
+        }
+
+        @keyframes shimmer {
+          100% {
+            transform: translateX(0%);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </div>
   )
 }

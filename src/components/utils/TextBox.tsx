@@ -6,6 +6,7 @@ interface Props {
   sub: string
   text: string
   children: ReactNode | boolean
+  className: string
 }
 
 const TextBox: FC<Partial<Props>> = ({
@@ -14,12 +15,14 @@ const TextBox: FC<Partial<Props>> = ({
   sub,
   text,
   children = false,
+  className,
 }) => {
   return (
     <div
-      className={`rounded-2xl bg-white dark:bg-gray-800 py-8 px-4 m-0 ${
-        !children && 'grid'
-      }`}>
+      className={`rounded-2xl bg-white dark:bg-gray-800 shadow-md py-8 px-4 ${className} ${
+        !children && 'flex'
+      }`}
+    >
       {children ? (
         children
       ) : (
