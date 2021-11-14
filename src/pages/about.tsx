@@ -21,13 +21,11 @@ const about: NextPage = () => {
       <section className='grid lg:grid-cols-2 place-items-center lg:place-items-start lg:space-x-5 mt-10'>
         <div className='w-full h-72 md:h-96 bg-me bg-cover bg-no-repeat bg-center rounded-2xl '></div>
         <div className='w-full  text-gray-800 mt-12 lg:mt-0'>
-          <Title
-            node={
-              <h1 className='text-3xl sm:text-4xl font-muli font-bold dark:text-gray-200'>
-                <span className='text-blue-500'>Front</span>-End Developer
-              </h1>
-            }
-          />
+          <Title>
+            <h1 className='text-3xl sm:text-4xl font-muli font-bold dark:text-gray-200'>
+              <span className='text-blue-500'>Front</span>-End Developer
+            </h1>
+          </Title>
           <div className='flex flex-col sm:flex-row justify-between mt-10 '>
             <PairTitle content={PERSON.filter((_, index) => !(index % 2))} />
             <PairTitle content={PERSON.filter((_, index) => index % 2)} />
@@ -61,11 +59,9 @@ const about: NextPage = () => {
       <section>
         <div className='mt-14 mb-8 w-full text-gray-800'>
           <Title
-            node={
-              <h1 className='text-4xl md:text-5xl font-muli font-bold dark:text-gray-200'>
-                What <span className='text-blue-500'>I'm Doing</span>
-              </h1>
-            }
+            className='text-4xl md:text-5xl font-bold'
+            title='What'
+            specific="I'm Doing"
           />
         </div>
         <div className='space-y-6 lg:space-y-0 mb-10 lg:grid lg:grid-cols-3 lg:gap-6'>

@@ -5,12 +5,21 @@ I'm working now with ReactJS and NextJS and develop single-page-applications.`
 const BG_INDEX = 'img/bg.jpeg'
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
 const PAGES = ['/', '/about', '/portfolio', '/resume', '/contact']
+const SOCIAL_MEDIA = [
+  {
+    title: 'linkedin',
+    icon: 'fa-linkedin',
+    link: 'https://www.linkedin.com/in/diajan/',
+  },
+  { title: 'github', icon: 'fa-github', link: 'https://github.com/diajan' },
+  { title: 'twitter', icon: 'fa-twitter', link: '#' },
+]
 const PERSON = [
   { title: 'Birthday', value: '3 December 2003' },
-  { title: 'Age ', value: '18' },
-  { title: 'Phone ', value: '+98 938 756 1279' },
-  { title: 'Mail ', value: 'm.mahdi.aghajan@gmail.com' },
-  { title: 'City ', value: 'Iran / Esfahan' },
+  { title: 'Age', value: '18' },
+  { title: 'Phone', value: '+98 938 756 1279' },
+  { title: 'Mail', value: 'm.mahdi.aghajan@gmail.com' },
+  { title: 'City', value: 'Iran / Esfahan' },
   { title: 'Status', value: 'Available' },
 ]
 const DOING = [
@@ -119,7 +128,8 @@ module.exports = {
   ABOUT,
   EDUCATION,
   EXPERIENCE,
-  SKILLS
+  SKILLS,
+  SOCIAL_MEDIA,
 }
 
 // 'https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260'

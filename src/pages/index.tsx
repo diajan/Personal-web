@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
-import { BG_INDEX, NAME } from '../../constant'
+import { BG_INDEX, NAME, SOCIAL_MEDIA } from '../../constant'
 import Particles from '../components/Particles'
 import { Typewriter } from '../components/Typewriter'
 import Title from '../components/utils/Title'
+import SocialMedia from '../components/utils/SocialMedia'
 import Main from '../layout/Main'
 
 const Home: NextPage = () => {
@@ -19,17 +20,9 @@ const Home: NextPage = () => {
             corder a publication to be made.
           </p>
           <div className='flex space-x-6 mt-6'>
-            <a
-              href='https://www.linkedin.com/in/diajan/'
-              className='hover:text-blue-500'>
-              <i className='fab fa-linkedin'></i>
-            </a>
-            <a href='https://github.com/diajan' className='hover:text-blue-500'>
-              <i className='fab fa-github'></i>
-            </a>
-            <a href='#' className='hover:text-blue-500'>
-              <i className='fab fa-twitter'></i>
-            </a>
+            {SOCIAL_MEDIA.map(({ icon, link }) => (
+              <SocialMedia key={link} icon={icon} link={link} />
+            ))}
           </div>
         </div>
       </div>
