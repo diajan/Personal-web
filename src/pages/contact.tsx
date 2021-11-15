@@ -3,19 +3,29 @@ import type { NextPage } from 'next'
 import Title from '../components/utils/Title'
 import { PERSON, SOCIAL_MEDIA } from '../../constant'
 import IconTitle from '../components/utils/IconTitle'
-import TextField from '../components/utils/TextField'
+import Field from '../components/utils/Field'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import Button from '../components/utils/Button'
+import Copyright from '../components/Copyright'
 
 const PHONE_NUMBER = PERSON.find(el => el.title === 'Phone')
 const MAIL = PERSON.find(el => el.title === 'Mail')
 const LINKEDIN = SOCIAL_MEDIA.find(el => el.title === 'linkedin')
 
 interface IFormInput {
-  firstName: String
+  name: String
+  email: string
+  subject: string
+  message: string
 }
 
-const contact: NextPage = () => {
-  const { register, handleSubmit } = useForm<IFormInput>()
+const Contact: NextPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>()
+
   const onSubmit: SubmitHandler<IFormInput> = data => console.log(data)
 
   return (
@@ -55,15 +65,39 @@ const contact: NextPage = () => {
 
       <section className='mt-20'>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='grid grid-cols-2 gap-x-5'>
-            <TextField type='text' placeholder='Name' />
-            <TextField type='email' placeholder='Email' />
+          <div className='grid lg:grid-cols-2 lg:gap-x-5'>
+            <Field
+              type='text'
+              placeholder='Name'
+              register={register('name', { required: 'Name Is Required' })}
+              errors={errors.name}
+            />
+            <Field
+              type='email'
+              placeholder='Email'
+              register={register('email', { required: 'Email Is Required' })}
+              errors={errors.email}
+            />
           </div>
-          <TextField type='text' placeholder='Subject' />
+          <Field
+            type='text'
+            placeholder='Subject'
+            register={register('subject', { required: 'Subject Is Required' })}
+            errors={errors.subject}
+          />
+          <Field
+            type='text'
+            placeholder='Message'
+            textarea
+            register={register('message', { required: 'Message Is Required' })}
+            errors={errors.message}
+          />
+          <Button title='Send Message' className='mt-4' type='submit' />
         </form>
       </section>
+      <Copyright />
     </Main>
   )
 }
 
-export default contact
+export default Contact

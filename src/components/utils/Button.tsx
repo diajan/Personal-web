@@ -5,12 +5,14 @@ interface Props {
     | string
     | React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
   className?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
-const Button: React.FC<Props> = ({ title, className }) => {
+const Button: React.FC<Props> = ({ title, className, type }) => {
   return (
-    <div
-      className={`grid cursor-pointer place-items-center transition-colors bg-blue-600 p-2  rounded-md ${className}`}>
+    <button
+      type={type}
+      className={`grid cursor-pointer place-items-center transition-colors bg-blue-600 p-2 text-white hover:bg-blue-500 rounded-md ${className}`}>
       {title}
 
       <style jsx>{`
@@ -18,7 +20,7 @@ const Button: React.FC<Props> = ({ title, className }) => {
           width: fit-content;
         }
       `}</style>
-    </div>
+    </button>
   )
 }
 
