@@ -7,6 +7,7 @@ import Field from '../components/utils/Field'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Button from '../components/utils/Button'
 import Copyright from '../components/Copyright'
+import axios from 'axios'
 
 const PHONE_NUMBER = PERSON.find(el => el.title === 'Phone')
 const MAIL = PERSON.find(el => el.title === 'Mail')
@@ -19,6 +20,13 @@ interface IFormInput {
   message: string
 }
 
+interface Axios {
+  method: 'POST' | 'GET'
+  url: string
+  headers: object
+  data: object
+}
+
 const Contact: NextPage = () => {
   const {
     register,
@@ -26,7 +34,21 @@ const Contact: NextPage = () => {
     formState: { errors },
   } = useForm<IFormInput>()
 
-  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data)
+  const onSubmit: SubmitHandler<IFormInput> = async data => {
+    try {
+      const response = await axios(`${process.env.NEXT_PUBLIC_BASE_URL}/api/mailer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data,
+      })
+
+      console.log(response.status)
+    } catch (error) {
+      console.log('ERROR ===> ', error)
+    }
+  }
 
   return (
     <Main>
