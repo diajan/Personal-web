@@ -1,51 +1,67 @@
-import Main from '../layout/Main'
 import type { NextPage } from 'next'
-import Title from '../components/utils/Title'
+import { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import axios from 'axios'
 import { PERSON, SOCIAL_MEDIA } from '../../constant'
+import Main from '../layout/Main'
+import Title from '../components/utils/Title'
 import IconTitle from '../components/utils/IconTitle'
 import Field from '../components/utils/Field'
-import { useForm, SubmitHandler } from 'react-hook-form'
 import Button from '../components/utils/Button'
 import Copyright from '../components/Copyright'
-import axios from 'axios'
+import Toast from '../components/utils/Toast'
+import { ToastProvider } from 'react-toast-notifications'
 
 const PHONE_NUMBER = PERSON.find(el => el.title === 'Phone')
 const MAIL = PERSON.find(el => el.title === 'Mail')
 const LINKEDIN = SOCIAL_MEDIA.find(el => el.title === 'linkedin')
 
-interface IFormInput {
+interface Data {
   name: String
   email: string
   subject: string
   message: string
 }
 
-interface Axios {
-  method: 'POST' | 'GET'
-  url: string
-  headers: object
-  data: object
+type Message = {
+  message: string
+  appearance: 'success' | 'error' | 'info' | null
 }
 
 const Contact: NextPage = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [message, setMessage] = useState<Message>({
+    appearance: null,
+    message: '',
+  })
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm<IFormInput>()
+  } = useForm<Data>()
 
-  const onSubmit: SubmitHandler<IFormInput> = async data => {
+  const onSubmit: SubmitHandler<Data> = async data => {
+    setLoading(true)
     try {
-      const response = await axios(`${process.env.NEXT_PUBLIC_BASE_URL}/api/mailer`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data,
-      })
+      const response = await axios(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/mailer`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          data,
+        }
+      )
 
-      console.log(response.status)
+      if (response.status === 200) {
+        setLoading(false)
+        setMessage({ appearance: 'success', message: 'Email Sent!! Thanks' })
+        reset()
+      }
     } catch (error) {
+      setMessage({ appearance: 'error', message: '500 Server Error' })
       console.log('ERROR ===> ', error)
     }
   }
@@ -97,25 +113,43 @@ const Contact: NextPage = () => {
             <Field
               type='email'
               placeholder='Email'
-              register={register('email', { required: 'Email Is Required' })}
+              register={register('email', {
+                required: 'Email Is Required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Invalid Email Address',
+                },
+              })}
               errors={errors.email}
             />
           </div>
           <Field
             type='text'
             placeholder='Subject'
-            register={register('subject', { required: 'Subject Is Required' })}
+            register={register('subject', {
+              required: 'Subject Is Required',
+            })}
             errors={errors.subject}
           />
           <Field
             type='text'
             placeholder='Message'
             textarea
-            register={register('message', { required: 'Message Is Required' })}
+            register={register('message', {
+              required: 'Message Is Required',
+            })}
             errors={errors.message}
           />
-          <Button title='Send Message' className='mt-4' type='submit' />
+          <Button
+            title='Send Message'
+            className='mt-4'
+            type='submit'
+            disabled={loading}
+          />
         </form>
+        <ToastProvider>
+          <Toast toast={message} />
+        </ToastProvider>
       </section>
       <Copyright />
     </Main>

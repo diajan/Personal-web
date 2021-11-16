@@ -6,13 +6,26 @@ interface Props {
     | React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
   className?: string
   type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
-const Button: React.FC<Props> = ({ title, className, type }) => {
+const Button: React.FC<Props> = ({
+  title,
+  className,
+  type,
+  disabled = false,
+}) => {
   return (
     <button
       type={type}
-      className={`grid cursor-pointer place-items-center transition-colors bg-blue-600 p-2 text-white hover:bg-blue-500 rounded-md ${className}`}>
+      className={`grid cursor-pointer place-items-center transition-colors p-2 text-white rounded-md ${
+        disabled
+          ? 'bg-gray-500 cursor-not-allowed'
+          : 'bg-blue-600 hover:bg-blue-500'
+      } ${className}`}
+      
+      disabled={disabled}
+    >
       {title}
 
       <style jsx>{`

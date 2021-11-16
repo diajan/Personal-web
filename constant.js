@@ -118,6 +118,26 @@ const SKILLS = [
   { skill: 'php', percent: '70' },
   { skill: 'mysql', percent: '50' },
 ]
+
+function emailTemplate(name, email, subject, message) {
+  return `
+  <div style='padding: 2rem 1rem;margin-bottom: 2rem;background-color: #e9ecef;border-radius: 0.3rem;'>
+    <h1
+      style='background-color: #41d0cf;
+      background-image: linear-gradient(43deg, #41d0cf 0%, #5092c8 46%, #ff70c3 100%);
+      ;color:#f3f3f3;border-radius: 10px ; text-align: center ; padding: 30px'
+    >
+      ✨ New Message (: ✨
+    </h1>
+    <h2 style='font-weight: 700; margin-bottom:10px;'>${subject}</h2/>
+    <br/>
+    <p style='font-weight: 700;color: #9b219b; text-align: center; '>
+      ${message}😉
+    </p>
+    <p style='font-weight: 600;'>From: ${name}; ${email}</p>
+  </div>`
+}
+
 module.exports = {
   BG_ME,
   BG_INDEX,
@@ -130,6 +150,7 @@ module.exports = {
   EXPERIENCE,
   SKILLS,
   SOCIAL_MEDIA,
+  emailTemplate,
 }
 
 // 'https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260'

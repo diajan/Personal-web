@@ -16,8 +16,8 @@ const Home: NextPage = () => {
             <Typewriter />
           </h2>
           <p className='font-light'>
-            In a professional context it often happens that private clients
-            corder a publication to be made.
+            Love is the most beautiful thing to have,<br/> the hardest thing to earn
+            and the most painful thing to lose
           </p>
           <div className='flex space-x-6 mt-6'>
             {SOCIAL_MEDIA.map(({ icon, link }) => (
