@@ -1,9 +1,14 @@
 import type { NextPage } from 'next'
-import Button from '../components/utils/Button'
-import Title from '../components/utils/Title'
+import { useState } from 'react'
 import Main from '../layout/Main'
+import Button from '../components/utils/Button'
+import Card from '../components/utils/Card'
+import Title from '../components/utils/Title'
+import { PORTFOLIOS } from '../../constant'
 
-const portfolio: NextPage = () => {
+const Portfolio: NextPage = () => {
+  const [fliter, setFliter] = useState<string>()
+
   return (
     <Main>
       <header className='text-center font-muli pt-12'>
@@ -33,16 +38,19 @@ const portfolio: NextPage = () => {
         />
       </section>
 
-      <section className='grid grid-cols-3 gap-10 mt-20'>
-        <div className='bg-red-800 rounded-3xl shadow-lg h-64 hover:bg-red-900'>d</div>
-        <div className='bg-cyan-800 rounded-3xl shadow-lg h-64 hover:bg-cyan-900'>d</div>
-        <div className='bg-indigo-800 rounded-3xl shadow-lg h-64 hover:bg-indigo-900'>
-          d
-        </div>
-        <div className='bg-blue-800 rounded-3xl shadow-lg h-64 hover:bg-blue-900'>d</div>
+      <section className='grid gap-y-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3 my-20'>
+        {PORTFOLIOS.map(({ title, repo, link, img }, index) => (
+          <Card
+            key={index + 1}
+            title={title}
+            img={img}
+            repo={repo}
+            link={link}
+          />
+        ))}
       </section>
     </Main>
   )
 }
 
-export default portfolio
+export default Portfolio

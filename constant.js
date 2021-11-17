@@ -1,10 +1,15 @@
 const NAME = 'Diajan'
+
 const ABOUT = `Hi, I'm Mohamad Mahdi Aghajan and 18 years old. I am a Front-end developer\n.
 I started to learn 4 years ago, I worked on server-side programming languages such as python, ruby, PHP even I was a back-end developer for short time,\n but I now focused on web development, specially front-end.
 I'm working now with ReactJS and NextJS and develop single-page-applications.`
+
 const BG_INDEX = 'img/bg.jpeg'
+
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
+
 const PAGES = ['/', '/about', '/portfolio', '/resume', '/contact']
+
 const SOCIAL_MEDIA = [
   {
     title: 'linkedin',
@@ -14,6 +19,7 @@ const SOCIAL_MEDIA = [
   { title: 'github', icon: 'fa-github', link: 'https://github.com/diajan' },
   { title: 'twitter', icon: 'fa-twitter', link: '#' },
 ]
+
 const PERSON = [
   { title: 'Birthday', value: '3 December 2003' },
   { title: 'Age', value: '18' },
@@ -22,6 +28,7 @@ const PERSON = [
   { title: 'City', value: 'Iran / Esfahan' },
   { title: 'Status', value: 'Available' },
 ]
+
 const DOING = [
   {
     title: 'SPA Development',
@@ -119,6 +126,33 @@ const SKILLS = [
   { skill: 'mysql', percent: '50' },
 ]
 
+const PORTFOLIOS = [
+  {
+    title: 'lorem ipsum',
+    img: 'img/bg.jpeg',
+    repo: '',
+    link: '',
+  },
+  {
+    title: 'lorem ipsum',
+    img: 'img/bg.jpeg',
+    repo: '',
+    link: '',
+  },
+  {
+    title: 'lorem ipsum',
+    img: 'img/bg.jpeg',
+    repo: '',
+    link: '',
+  },
+  {
+    title: 'lorem ipsum',
+    img: 'img/bg.jpeg',
+    repo: '',
+    link: '',
+  },
+]
+
 function emailTemplate(name, email, subject, message) {
   return `
   <div style='padding: 2rem 1rem;margin-bottom: 2rem;background-color: #e9ecef;border-radius: 0.3rem;'>
@@ -150,6 +184,7 @@ module.exports = {
   EXPERIENCE,
   SKILLS,
   SOCIAL_MEDIA,
+  PORTFOLIOS,
   emailTemplate,
 }
 
