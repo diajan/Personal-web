@@ -1,8 +1,6 @@
 const NAME = 'Diajan'
 
-const ABOUT = `Hi, I'm Mohamad Mahdi Aghajan and 18 years old. I am a Front-end developer\n.
-I started to learn 4 years ago, I worked on server-side programming languages such as python, ruby, PHP even I was a back-end developer for short time,\n but I now focused on web development, specially front-end.
-I'm working now with ReactJS and NextJS and develop single-page-applications.`
+const ABOUT = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
 
 const BG_INDEX = 'img/bg.jpeg'
 
@@ -21,11 +19,11 @@ const SOCIAL_MEDIA = [
 ]
 
 const PERSON = [
-  { title: 'Birthday', value: '3 December 2003' },
-  { title: 'Age', value: '18' },
-  { title: 'Phone', value: '+98 938 756 1279' },
-  { title: 'Mail', value: 'm.mahdi.aghajan@gmail.com' },
-  { title: 'City', value: 'Iran / Esfahan' },
+  { title: 'Birthday', value: '1 july 1990' },
+  { title: 'Age', value: '31' },
+  { title: 'Phone', value: '+123456789' },
+  { title: 'Mail', value: 'info@gmail.com' },
+  { title: 'City', value: 'Iran' },
   { title: 'Status', value: 'Available' },
 ]
 
@@ -70,14 +68,14 @@ const DOING = [
 
 const EDUCATION = [
   {
-    title: 'Safi High school',
+    title: 'Lorem ipsum is placeholder text',
     sub: '2019-2020',
-    desc: 'Diploma of Education (an year), Mathematics',
+    desc: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing',
   },
   {
-    title: 'Nasime Danesh Conservatory',
+    title: 'Lorem ipsum is placeholder text',
     sub: '2020-2022',
-    desc: 'Diploma of Education, Computer Graphics',
+    desc: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing',
   },
 ]
 
@@ -85,27 +83,27 @@ const EXPERIENCE = [
   {
     title: 'Web Developer',
     sub: '2020-2021',
-    desc: 'Freelance, Esfahan/Iran',
+    desc: 'Freelance',
   },
   {
     title: 'Web Developer',
     sub: '2020-2021',
-    desc: 'Freelance, Esfahan/Iran',
+    desc: 'Freelance',
   },
   {
     title: 'Web Developer',
     sub: '2020-2021',
-    desc: 'Freelance, Esfahan/Iran',
+    desc: 'Freelance',
   },
   {
     title: 'Web Developer',
     sub: '2020-2021',
-    desc: 'Freelance, Esfahan/Iran',
+    desc: 'Freelance',
   },
   {
     title: 'Web Developer',
     sub: '2020-2021',
-    desc: 'Freelance, Esfahan/Iran',
+    desc: 'Freelance',
   },
 ]
 
@@ -116,14 +114,6 @@ const SKILLS = [
   { skill: 'Typescript', percent: '70' },
   { skill: 'reactjs', percent: '85' },
   { skill: 'redux', percent: '90' },
-  { skill: 'nextjs', percent: '80' },
-  { skill: 'css Frameworks', percent: '90' },
-  { skill: 'design systems', percent: '85' },
-  { skill: 'sass', percent: '90' },
-  { skill: 'webpack', percent: '70' },
-  { skill: 'git', percent: '70' },
-  { skill: 'php', percent: '70' },
-  { skill: 'mysql', percent: '50' },
 ]
 
 const PORTFOLIOS = [
@@ -132,24 +122,28 @@ const PORTFOLIOS = [
     img: 'img/bg.jpeg',
     repo: '',
     link: '',
+    keyword: 'lorem',
+  },
+  {
+    title: 'test',
+    img: 'img/bg.jpeg',
+    repo: '',
+    link: '',
+    keyword: 'test',
   },
   {
     title: 'lorem ipsum',
     img: 'img/bg.jpeg',
     repo: '',
     link: '',
+    keyword: 'lorem',
   },
   {
-    title: 'lorem ipsum',
+    title: 'test',
     img: 'img/bg.jpeg',
     repo: '',
     link: '',
-  },
-  {
-    title: 'lorem ipsum',
-    img: 'img/bg.jpeg',
-    repo: '',
-    link: '',
+    keyword: 'test',
   },
 ]
 

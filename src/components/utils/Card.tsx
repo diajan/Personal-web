@@ -18,6 +18,7 @@ const Card: React.FC<Props> = ({ title, link, repo, img }) => {
         <div className='flex space-x-3'>
           <a
             href={link}
+            rel='noreferrer'
             target='_blank'
             className='bg-white text-blue-800 py-2 px-3 rounded-md'>
             <i className='fas fa-link '></i>
@@ -25,6 +26,7 @@ const Card: React.FC<Props> = ({ title, link, repo, img }) => {
           <a
             href={repo}
             target='_blank'
+            rel='noreferrer'
             className='bg-white text-blue-800 py-2 px-3 rounded-md'>
             <i className='fab fa-github '></i>
           </a>
@@ -33,7 +35,7 @@ const Card: React.FC<Props> = ({ title, link, repo, img }) => {
       </div>
       <style jsx>{`
         .bg {
-          background-image:url(${img});
+          background-image: url(${img});
         }
         #work:hover #work-overlay {
           opacity: 0.95;

@@ -6,8 +6,17 @@ import Card from '../components/utils/Card'
 import Title from '../components/utils/Title'
 import { PORTFOLIOS } from '../../constant'
 
+//unique keywords
+const keywords = Array.from(
+  new Set(
+    PORTFOLIOS.map(el => el.keyword)
+      .join(' ')
+      .split(' ')
+  )
+)
+
 const Portfolio: NextPage = () => {
-  const [fliter, setFliter] = useState<string>()
+  const [filter, setFliter] = useState<string>('all')
 
   return (
     <Main>
@@ -15,38 +24,26 @@ const Portfolio: NextPage = () => {
         <Title
           title='My'
           specific='Portfolio'
-          className='text-6xl md:text-7xl font-bold'
+          className='leading-tight text-6xl md:text-7xl font-bold'
         />
       </header>
 
-      <section className='flex space-x-5 justify-center w-full mt-20'>
-        <Button
-          title='All'
-          className='px-6 focus:bg-white focus:text-blue-600'
-        />
-        <Button
-          title='React'
-          className='px-6 focus:bg-white focus:text-blue-600'
-        />
-        <Button
-          title='Next'
-          className='px-6 focus:bg-white focus:text-blue-600'
-        />
-        <Button
-          title='Js'
-          className='px-6 focus:bg-white focus:text-blue-600'
-        />
+      <section className='flex flex-wrap space-x-5  justify-center w-full mt-20'>
+        {keywords.map((keyword, i) => (
+          <Button
+            key={++i}
+            title={keyword}
+            className='focus:bg-white focus:text-blue-600 mt-5'
+            onClick={() => setFliter(keyword)}
+          />
+        ))}
       </section>
 
       <section className='grid gap-y-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3 my-20'>
-        {PORTFOLIOS.map(({ title, repo, link, img }, index) => (
-          <Card
-            key={index + 1}
-            title={title}
-            img={img}
-            repo={repo}
-            link={link}
-          />
+        {PORTFOLIOS.filter(
+          el => filter === 'all' || el.keyword.split(' ').includes(filter)
+        ).map(({ title, repo, link, img }, i) => (
+          <Card key={++i} title={title} img={img} repo={repo} link={link} />
         ))}
       </section>
     </Main>
