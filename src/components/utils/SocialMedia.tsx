@@ -6,7 +6,7 @@ interface Props {
   className?: string
 }
 
-const Title: React.FC<Props> = ({ icon, link, className }) => {
+const SocialMedia: React.FC<Props> = ({ icon, link, className }) => {
   return (
     <div>
       <a href={link} className={`hover:text-blue-500 ${className}`}>
@@ -16,4 +16,4 @@ const Title: React.FC<Props> = ({ icon, link, className }) => {
   )
 }
 
-export default Title
+export default SocialMedia
