@@ -24,10 +24,8 @@ const mailer = async (req: NextApiRequest, res: NextApiResponse) => {
       html: emailTemplate(name, email, subject, message),
     })
 
-    console.log('EMAIL SENT', send.messageId)
     res.status(200).json({ status: 'EMAIL_SEND (:' })
   } catch (error) {
-    console.log('EROR ===> ', error)
     res.status(500).json({ status: 'EMAIL_NOT_SEND ):' })
   }
 }

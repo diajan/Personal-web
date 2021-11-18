@@ -29,12 +29,20 @@ const Portfolio: NextPage = () => {
       </header>
 
       <section className='flex flex-wrap space-x-5  justify-center w-full mt-20'>
+        <Button
+          key={'all'}
+          title={'all'}
+          className='capitalize focus:bg-white focus:text-blue-600 mt-5'
+          onClick={() => setFliter('all')}
+          active={'all' === filter}
+        />
         {keywords.map((keyword, i) => (
           <Button
             key={++i}
             title={keyword}
-            className='focus:bg-white focus:text-blue-600 mt-5'
+            className='capitalize focus:bg-white focus:text-blue-600 mt-5'
             onClick={() => setFliter(keyword)}
+            active={keyword === filter}
           />
         ))}
       </section>

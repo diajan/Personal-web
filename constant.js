@@ -6,7 +6,13 @@ const BG_INDEX = 'img/bg.jpeg'
 
 const BG_ME = 'https://retrina.com/demo/arshia/cv/assets/img/about-03.jpg'
 
-const PAGES = ['/', '/about', '/portfolio', '/resume', '/contact']
+const MENU = [
+  { title: 'Home', path: '/', icon: 'fa-home' },
+  { title: 'About Me', path: '/about', icon: 'fa-user' },
+  { title: 'Resume', path: '/resume', icon: 'fa-file-invoice' },
+  { title: 'Portfolio', path: '/portfolio', icon: 'fa-briefcase' },
+  { title: 'Contact', path: '/contact', icon: 'fa-paper-plane' },
+]
 
 const SOCIAL_MEDIA = [
   {
@@ -171,7 +177,6 @@ module.exports = {
   BG_INDEX,
   NAME,
   PERSON,
-  PAGES,
   DOING,
   ABOUT,
   EDUCATION,
@@ -179,8 +184,6 @@ module.exports = {
   SKILLS,
   SOCIAL_MEDIA,
   PORTFOLIOS,
+  MENU,
   emailTemplate,
 }
-
-// 'https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260'
-// 'https://image.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg'

@@ -22,7 +22,7 @@ const BurgerMenu: React.FC = () => {
             show ? 'fixed' : 'hidden'
           }`}></div>
 
-        <div className={`fixed z-50 ${!show && '-left-3'}`}>
+        <div className={`fixed z-50 ${!show && '-left-7'}`}>
           <div className={`relative transition-all w-0 ${show && 'w-20'}`}>
             <Menu />
           </div>

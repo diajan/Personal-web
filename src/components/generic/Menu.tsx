@@ -1,45 +1,27 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { MENU } from '../../../constant'
 
 const Menu: React.FC<{}> = () => {
+  const { pathname } = useRouter()
+
   return (
     <>
       <div className='shadow h-screen bg-white dark:bg-gray-800 rounded-r-3xl lg:p-3'>
         <ul className='flex flex-col h-full items-center justify-center space-y-12 xl:space-y-16 text-xl text-blue-500 dark:text-blue-50'>
-          <Link href='/' passHref>
-            <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
-              <i className='fas fa-home'></i>
-              <span className='text-xs title'>Home</span>
-            </li>
-          </Link>
-
-          <Link href='/about' passHref>
-            <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
-              <i className='fas fa-user'></i>
-              <span className='text-xs title'>About Me</span>
-            </li>
-          </Link>
-
-          <Link href='/portfolio' passHref>
-            <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
-              <i className='fas fa-briefcase'></i>
-              <span className='text-xs title'>Portfolio</span>
-            </li>
-          </Link>
-
-          <Link href='/resume' passHref>
-            <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
-              <i className='far fa-id-card'></i>
-              <span className='text-xs title'>Resume</span>
-            </li>
-          </Link>
-
-          <Link href='/contact' passHref>
-            <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
-              <i className='fas fa-paper-plane'></i>
-              <span className='text-xs title'>Contact</span>
-            </li>
-          </Link>
+          {MENU.map(({ title, path, icon }) => (
+            <Link href={path} key={path} passHref>
+              <li className='box flex flex-col place-items-center w-full space-y-2 hover:text-blue-400 font-bold font-muli cursor-pointer'>
+                <i className={`fas ${icon}`}></i>
+                <span
+                  className={`${pathname === path && 'active'} text-xs title`}
+                >
+                  {title}
+                </span>
+              </li>
+            </Link>
+          ))}
         </ul>
 
         <style jsx>{`
@@ -59,6 +41,11 @@ const Menu: React.FC<{}> = () => {
           }
 
           .box:hover span {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          .active {
             visibility: visible;
             opacity: 1;
           }

@@ -1,4 +1,3 @@
-const colors = require('tailwindcss/colors')
 const { BG_ME } = require('./constant.js')
 
 module.exports = {
@@ -12,12 +11,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         me: `url(${BG_ME})`,
-        'footer-texture': "url('/img/footer-texture.png')",
-      },
-      colors: {
-        violet: colors.violet,
-        cyan: colors.cyan,
-        orange: colors.orange,
       },
       fontFamily: {
         muli: "'Mulish', sans-serif",
